@@ -11,7 +11,7 @@ import foo
 import number_checker
 import status_checker
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 scheduler = BackgroundScheduler()
 
@@ -52,7 +52,7 @@ def check_all_numbers():
             resp = send_message(chatId=f"{number}@c.us", text="Message-1")
 
 
-@app.route('/', methods=['POST'])
+@application.route('/', methods=['POST'])
 def home():
     if request.method == 'POST':
         dict_messages = []
@@ -85,7 +85,7 @@ def home():
                                 '''
                                 cur.execute(command, (1, int(number)))
                                 con.commit()
-                        scheduler.add_job(func=check_all_numbers, trigger='interval', seconds=10)
+                        scheduler.add_job(func=check_all_numbers, trigger='interval', seconds=3600)
                         scheduler.start()
                     else:
                         number = _id[:12]
@@ -177,4 +177,4 @@ def home():
 
 
 if __name__ == '__main__':
-    app.run()
+    application.run()

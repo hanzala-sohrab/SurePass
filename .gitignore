@@ -5,3 +5,15 @@ SurePass/
 *.pdf
 *.db
 db.py
+
+.vscode/
+*.pkl
+ear_bot/
+log/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+python.config
+.ebextensions

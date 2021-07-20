@@ -7,6 +7,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/SurePass" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/.ebextensions" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (SurePass)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,5 +1,6 @@
-import requests, json
+import requests
 import foo
+
 
 def check(phone):
     url = f"{foo.APIUrl}checkPhone?phone={phone}&token={foo.token}"
@@ -9,6 +10,7 @@ def check(phone):
 
     resp = requests.get(url, headers=headers).json()
     return resp
+
 
 if __name__ == "__main__":
     print(check(919031738598))

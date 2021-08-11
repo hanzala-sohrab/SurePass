@@ -52,6 +52,12 @@ def check_all_numbers():
             resp = send_message(chatId=f"{number}@c.us", text="Message-1")
 
 
+@application.route("/getNumbers", methods=["POST"])
+def get_numbers():
+    if request.method == "POST":
+        
+
+
 @application.route('/', methods=['POST'])
 def home():
     if request.method == 'POST':
@@ -85,7 +91,7 @@ def home():
                                 '''
                                 cur.execute(command, (1, int(number)))
                                 con.commit()
-                        scheduler.add_job(func=check_all_numbers, trigger='interval', seconds=3600)
+                        scheduler.add_job(func=check_all_numbers, trigger='interval', seconds=10)
                         scheduler.start()
                     else:
                         number = _id[:12]
